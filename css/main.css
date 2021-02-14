@@ -1,0 +1,625 @@
+@import './header.css';
+
+@font-face{
+    font-family: "Sansation";
+    src: local('Sansation_Regular'), url('./fonts/Sansation_Regular.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "Sansation Light";
+    src: local('Sansation_Light'), url('./fonts/Sansation_Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "Sansation Bold";
+    src: local('Sansation_Bold'), url('./fonts/Sansation_Bold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+html{
+    font-family: "Sansation";
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited{
+    color: inherit;
+}
+
+body{
+    margin: 0;
+    background-color: snow;
+    overflow-x: hidden;
+}
+
+#wrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#startpage--overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .97;
+    background-color: gray;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#startpage--block{
+    width: 40%;
+    height: 40%;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 10px;
+    padding: 2vw;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#startpage--block :nth-child(even){
+    margin-top: 1vw;
+}
+
+#startpage--input{
+    margin-top: 10%;
+    border-radius: 4px;
+    border: 1px solid black;
+    font-family: "Sansation";
+    padding: 10px 15px;
+}
+
+#startpage--input:focus::-webkit-input-placeholder{
+    color: transparent;
+}
+
+#startpage--submit{
+    font-size: 1.5vw;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: blue;
+    cursor: pointer;
+}
+
+#startpage--block span{
+    font-size: 2vw;
+    color: black;
+}
+
+#main-info{
+    z-index: 0;
+    position: absolute;
+    top: 5vw;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%); */
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#main-info h1{
+    font-size: 4vw;
+    font-family: "Sansation Bold";
+}
+
+#main-info--text{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 60%;
+    width: 70%;
+}
+
+#main-info-content img{
+    -webkit-filter: drop-shadow(20px 20px 20px #222);
+    filter: drop-shadow(20px 20px 20px #222);
+    /* align-self: flex-end; */
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#menu-button{
+    border-radius: 9px;
+    background-image: linear-gradient(-90deg, #3284bd 20%, #77add3 80%);    height: 40%;
+    width: 40%;
+    margin: 0 0 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    filter: drop-shadow(20px 20px 20px #222);
+    cursor: pointer;
+    color: white;
+    font-family: "Sansation Light";
+}
+
+#main-info-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 70%;
+    height: 30%;
+}
+
+#main-info--text span{
+    font-size: 1.75vw;
+    font-family: "Sansation Light";
+    /* margin: 0 4vw; */
+}
+
+#secondary-info{
+    z-index: 0;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#secondary-info--text{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#secondary-info--text ul{
+    font-family: "Sansation Light";
+    font-size: 1.5vw;
+}
+
+#secondary-info--text li{
+    margin-top: 15px;
+}
+
+#secondary-info--text span{
+    font-family: "Sansation Light";
+    font-size: 1.5vw;
+    margin-top: 5px;
+}
+
+
+#secondary-info h2{
+    font-family: "Sansation Bold";
+    font-size: 1.5vw;
+}
+
+#activities{
+    z-index: 0;
+    background-image: linear-gradient(to right, #c1c161bd 0%, #dada81 0%, #d4d4b1 100%);
+    position: absolute;
+    top: 220%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#activities__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    height: 60%;
+}
+
+#activities--title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+}
+
+#activities--title span{
+    font-family: "Sansation Bold";
+    font-size: 3vw;
+}
+
+#triangle-page__container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 290%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+}
+
+#triangle-page__container h3{
+    /* margin: 5% 0 0 5%; */
+    font-size: 2.5vw;
+    font-family: "Sansation Bold";
+}
+
+#triangle-page__inputs, #strings-page__content, #array-page__content{
+    margin-top: 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    /* align-self: flex-start; */
+    width: 90%;
+    height: 50%;
+}
+
+#triangle-page__inputs span{
+    font-size: 1.5vw;
+}
+
+#triangle-page__inputs div{
+    margin-top: 20px;
+}
+
+#triangle_a, #triangle_h, #str1, #str2{
+    width: 15%;
+    margin-left: 10px;
+}
+
+#triangle--count-square__btn, #strings--count__btn,
+#array--button, #timer--start-stop__btn,
+#timer--clear__btn{
+    margin-top: 15px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 25px;
+    padding: 10px;
+    background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+    cursor: pointer;
+    transition: color .5s linear;
+}
+
+#triangle--count-square__btn:hover, #strings--count__btn:hover,
+#array--button:hover, #timer--start-stop__btn:hover,
+#timer--clear__btn:hover{
+    
+}
+
+#timer--start-stop__btn{
+    min-width: 90px;
+}
+
+#tr-res, #stringsres{
+    font-family: "Sansation Bold";
+}
+
+
+#strings-page__container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 370%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+#strings-page__container h3{
+    font-size: 2.5vw;
+    font-family: "Sansation Bold";
+}
+
+#str1, #str2{
+    width: 40%;
+}
+
+#strings-page__content span{
+    font-size: 1.5vw;
+}
+
+#array-page__container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 450%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+}
+
+#array-page__container h3{
+    font-size: 2.5vw;
+    font-family: "Sansation Bold";
+}
+
+
+#array-page__content span{
+    font-size: 1.5vw;
+}
+
+.array-element{
+    width: fit-content;
+    max-width: 2vw;
+    margin-left: 10px;
+    min-height: 1.5vw;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#array--plus, #array--minus{
+    font-family: "Sansation Bold";
+    font-size: 2vw;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin: 20px 0;
+    height: fit-content;
+    transition: background-color .25s linear;
+}
+
+#array--plus:hover{
+    background-color: green;
+    cursor: pointer;
+}
+
+#array--minus:hover{
+    background-color: crimson;
+}
+
+#array-ctr{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#array--elements{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+#array-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 7%;
+}
+
+#array--min, #array--max{
+    font-family: "Sansation Bold";
+}
+
+#timer-page__container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 530%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+#timer-page-content{
+    display: flex;
+    margin: 5%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+#timer-page__container h3{
+    font-size: 2.5vw;
+    font-family: "Sansation Bold";
+}
+
+#timer--ctr{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+#timer{
+    font-size: 4vw;
+}
+
+#timer-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 5% 0;
+}
+
+#timer-buttons div{
+    margin: 0 5%;
+}
+
+.activity--block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    border-radius: 9px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.activity--block a{
+    width: 100%;
+    height: 100%;
+}
+
+.activity--inner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 2;
+    font-size: 1vw;
+}
+
+.activity--inner:hover{
+    font-family: "Sansation Bold";
+}
+
+.activity--inner span{
+    margin-top: 10px;
+}
+
+.activity--triangle{
+    margin: 0 0 0 5%;
+}
+
+.activity--strings{
+    margin: 0;
+}
+
+.activity--array{
+    margin: 0;
+}
+
+.activity--timer{
+    margin: 0;
+}
+
+.activity--test{
+    margin: 0 5% 0 0;
+}
+
+
+#screensaver-wrapper{
+    z-index: 15;
+    position:fixed;
+    top: 0;
+    left: 0;
+    background: url('../images/mntns.jpg') no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    /* transition: 1s; */
+}
+
+.screensaver-nactive{
+    display: none;
+
+}
+
+#screensaver-content{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    opacity: 0;
+}
+
+.screensaver-active{
+    transition: 2s;
+    opacity: 1;
+    height: 100%;
+}
+
+#time{
+    margin: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#time span{
+    font-family: "Sansation Light";
+    font-size: 5vw;
+    filter: drop-shadow(1px 1px 1px #222);
+}
+
+#date-name span{
+    font-size: 3vw;
+    font-family: "Sansation Light";
+    filter: drop-shadow(2px 2px 2px #222);
+}
+
+
+#test-page__container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 600%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+#test-page__container h3{
+    font-size: 2.5vw;
+    font-family: "Sansation Bold";
+}
+
+#test-page-content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
