@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./images/appletouch.png">
+    <link rel="stylesheet" href="./css/media.css">
+    <title>JS for Beginners</title>
+</head>
+
+<body>
+
+    <div id="startpage--overlay">
+        <div id="startpage--block">
+            <span>Hello, World!</span>
+            <span>Введите, пожалуйста, Ваше имя:</span>
+            <input type="text" id="startpage--input" placeholder="Ваше имя">
+            <div id="startpage--submit">
+                Готово
+            </div>
+        </div>
+    </div>
+
+    <div id="screensaver-wrapper" class="screensaver-nactive">
+        <div id="screensaver-content">
+            <div id="time">
+                <span><span id="hours"></span>:<span id="mins"> </span></span>
+            </div>
+
+            <div id="date-name">
+                <span id="name"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="wrapper">
+
+        <div id="header">
+
+            <div id="header--left">
+                <div class="header__button element--first" id="top-button">
+                    <img src="./images/totop.svg" alt="" height="40px" title="Наверх">
+                </div>
+
+                <div class="header__button" id="scrennsaver--button">
+                    <img src="./images/img.svg" alt="" height="40px" title="Включить заставку">
+                </div>
+            </div>
+
+            <div id="header--right">
+                <div id="greetings"></div>
+
+            </div>
+        </div>
+
+        <div id="main-info">
+            <h1>Что такое JavaScript?</h1>
+            <div id="main-info--text">
+                <span>JavaScript это язык, который позволяет Вам применять сложные вещи на web странице — каждый раз,
+                    когда на web странице происходит что-то большее, чем просто её статичное отображение — отображение
+                    периодически обновляемого контента, или интерактивных карт, или анимация 2D/3D графики, или
+                    прокрутка видео в проигрывателе, и т.д. — можете быть уверены, что скорее всего, не обошлось без
+                    JavaScript.</span>
+                <span>Это третий слой слоёного пирога стандартных web технологий, позволяющий создать динамически
+                    обновляемый контент, управлять мультимедиа, анимировать изображения и делать много прочих
+                    вещей</span>
+            </div>
+            <div id="main-info-content">
+                <div id="menu-button">
+                    <span>К меню</span>
+                </div>
+                <img src="./images/cake.png" alt="" height="150%">
+            </div>
+        </div>
+
+        <div id="secondary-info">
+            <div id="secondary-info--text">
+                <h2>Ядро языка JavaScript состоит из некоторого количества обычных возможностей, которые позволяют
+                    делать следующее:</h2>
+                <ul>
+                    <li>Хранить данные внутри переменных</li>
+                    <li>Производить различные операции со строками</li>
+                    <li>Запускать код в соответствии с определенными событиями, происходящими на web странице. Например,
+                        можно использовать CLICK событие для определения момента, когда кнопка была нажата, чтобы в
+                        соответствии с этим запускался определенный код</li>
+                </ul>
+                <span>Еще более увлекательным является функциональность, созданная поверх основного языка JavaScript.
+                    Так называемые интерфейсы прикладного программирования (API) предоставляют вам дополнительные
+                    сверхспособности для использования в вашем коде JavaScript.</span>
+                <span>API - это готовые наборы блоков кода, которые позволяют разработчику реализовывать программы,
+                    которые в противном случае было бы трудно или невозможно реализовать.</span>
+            </div>
+        </div>
+
+        <div id="activities">
+            <div id="activities--title">
+                <span>Попробуйте сами!</span>
+            </div>
+
+            <div id="activities__container">
+                <div class="activity--block activity--triangle"
+                    title="Введите сторону треугольника и его высоту, и при помощи магии JS и математики получите его площадь">
+                    <div class="activity--inner">
+                        <img src="./images/triangle.svg" alt="SVG Triangle" height="90px">
+                        <span>Найти площадь треугольника</span>
+                    </div>
+                </div>
+
+                <div class="activity--block activity--strings" title="Введите две строки - узнайте, одной ли они длины">
+                    <div class="activity--inner">
+                        <img src="./images/length.svg" alt="" height="90px">
+                        <span>Сравнить длины строк</span>
+                    </div>
+                </div>
+
+                <div class="activity--block activity--array" title="Думаю, тут всё понятно">
+                    <div class="activity--inner">
+                        <img src="./images/array.svg" alt="" height="90px">
+                        <span>Найти минимум и максимум массива</span>
+                    </div>
+                </div>
+
+                <div class="activity--block activity--timer" title="Тик-так">
+                    <div class="activity--inner">
+                        <img src="./images/timer.svg" alt="" height="90px">
+                        <span>Секундомер</span>
+                    </div>
+                </div>
+
+                <div class="activity--block activity--test" title="Проверим ваши знания">
+                    <div class="activity--inner">
+                        <img src="./images/test.svg" alt="" height="90px">
+                        <span>Пройти тест по JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="triangle-page__container">
+            <!-- <a name="triangle"></a> -->
+            <h3>Нахождение площади треугольника через основание и высоту</h3>
+
+
+            <div id="triangle-page__inputs">
+                <span>Площадь треугольника рассчитывается по формуле, затем полученное значение записывается в
+                    конкретный элемент страницы</span>
+                <div>
+                    <span>Введите длину основания: </span>
+                    <input type="number" name="Основание" id="triangle_a">
+                </div>
+                <div>
+                    <span>Введите длину высоты:</span>
+                    <input type="number" name="Высота" id="triangle_h">
+                </div>
+
+                <div id="triangle--count-square__btn">
+                    Посчитать
+                </div>
+
+                <div id="triangle-res">
+                    <span>Результат: </span>
+                    <span id="tr-res">0</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="strings-page__container">
+            <a name="strings"></a>
+
+            <h3>Сравнение длин строк</h3>
+            <div id="strings-page__content">
+                <div>
+                    <span>Введите строку 1: </span>
+                    <input type="text" name="Строка 1" id="str1">
+                </div>
+                <div style="margin-top: 30px;">
+                    <span>Введите строку 2: </span>
+                    <input type="text" name="Строка 2" id="str2">
+                </div>
+
+                <div id="strings--count__btn">
+                    Готово
+                </div>
+
+                <div id="strres" style="margin-top: 30px;">
+                    <span>Результат: <span id="stringsres">Нет данных</span></span>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="array-page__container">
+            <h3>Поиск максимума и минимума массива</h3>
+
+            <div id="array-page__content">
+                <span>Введите элементы массива, уменьшите или увеличьте их количество, и получите ответ</span>
+                <div id="array-buttons">
+                    <div id="array--minus">-</div>
+                    <div id="array--plus">+</div>
+                </div>
+                <div id="array--elements">
+                    <input type="number" class="array-element" style="margin: 0;">
+                    <input type="number" class="array-element">
+                    <input type="number" class="array-element">
+                    <input type="number" class="array-element">
+                    <input type="number" class="array-element">
+                </div>
+
+                <div id="array--button">
+                    Готово
+                </div>
+
+                <span style="margin-top: 20px;">Минимум: <span id="array--min">0</span></span>
+                <span style="margin-top: 20px;">Максимум: <span id="array--max">0</span></span>
+            </div>
+
+        </div>
+
+        <div id="timer-page__container">
+            <h3>Секундомер</h3>
+
+            <div id="timer-page-content">
+                <span style="margin: 5% 0">В данном примере - простой секундомер, отображающий минуты и секунды</span>
+
+                <div id="timer--ctr">
+                    <span id="timer">00:00</span>
+
+                    <div id="timer-buttons">
+                        <div id="timer--start-stop__btn">
+                            Запустить
+                        </div>
+
+                        <div id="timer--clear__btn">
+                            Обнулить
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="test-page__container">
+            <h3>Тест на знание JavaScript</h3>
+
+            <div id="test-page-content">
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
