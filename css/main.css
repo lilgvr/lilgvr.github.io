@@ -167,7 +167,7 @@ body{
 #cake-img{
     -webkit-filter: drop-shadow(2px 2px 2px #222);
     filter: drop-shadow(2px 2px 2px #222);
-    filter: grayscale(90%);
+    filter: grayscale(100%);
     /* align-self: flex-end; */
     pointer-events: none;
     user-select: none;
@@ -185,7 +185,7 @@ body{
     background-color: white;
     height: 40%;
     width: 40%;
-    margin: 0 0 0 10%;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
