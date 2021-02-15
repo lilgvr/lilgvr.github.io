@@ -37,6 +37,7 @@ document.getElementById('cake').addEventListener('click', () => {
 startpageSubmit.addEventListener('click',
     () => {
         var value = document.getElementById('startpage--input').value;
+        if(value.length == 0) return;
         sessionStorage.setItem('currentUser', value);
         currentUser = value;
         overlay.style.display = 'none';
@@ -118,7 +119,9 @@ document.getElementById('strings--count__btn').addEventListener('click', () => {
         str2 = document.getElementById('str2').value;
     var span = document.getElementById('stringsres');
 
-    if (str1.length == str2.length) {
+    if(str1.length == 0) return;
+
+    if (str1.length == str2.length ) {
         span.innerHTML = 'Длины строк равны';
     } else {
         span.innerHTML = 'Длины строк не равны';
