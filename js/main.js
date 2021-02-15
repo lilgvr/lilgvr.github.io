@@ -26,6 +26,14 @@ window.onload = () => {
     };
 }
 
+document.getElementById('cake').addEventListener('click', () => {
+    document.getElementById('menu-button').classList.add('cake-transition');
+    document.getElementById('main-info-content').style.justifyContent = 'space-between';
+    document.getElementById('cake-img').classList.add('cake-transition');
+    document.getElementById('cake-img').style.display = 'block';
+
+})
+
 startpageSubmit.addEventListener('click',
     () => {
         var value = document.getElementById('startpage--input').value;
@@ -119,7 +127,7 @@ document.getElementById('strings--count__btn').addEventListener('click', () => {
     }
 })
 
-document.getElementById('menu-button').addEventListener('click', ()=>{
+document.getElementById('menu-button').addEventListener('click', () => {
     document.getElementById('activities').scrollIntoView({
         behavior: 'smooth',
         block: 'center'
@@ -164,6 +172,7 @@ document.getElementsByClassName('activity--test')[0].addEventListener('click', (
 
 
 function addArrEl() {
+    regArray();
     var len = document.getElementsByClassName('array-element').length;
 
     if (len > 10) return;
@@ -176,6 +185,7 @@ function addArrEl() {
 }
 
 function removeArrEl() {
+    regArray();
     var len = document.getElementsByClassName('array-element').length;
 
     if (len < 3) return;
@@ -184,20 +194,30 @@ function removeArrEl() {
     block.removeChild(document.getElementsByClassName('array-element')[len - 1]);
 }
 
-document.getElementById('array--button').addEventListener('click', () => {
+
+function regArray() {
     array = [];
     var arr = document.getElementsByClassName('array-element');
     for (let i = 0; i < arr.length; i++) {
         array.push(arr[i].value);
     }
-    var max = array[0], min = array[0];
+}
+
+document.getElementById('array--button').addEventListener('click', () => {
+    regArray();
+    var max, min;
+    if (array.length > 0) {
+        max = array[0];
+        min = array[0];
+    }
 
     for (let i = 0; i < array.length; i++) {
         if (array[i] > max) max = array[i];
     }
 
     for (let i = 0; i < array.length; i++) {
-        if (array[i] < min) min = array[i];
+        if (min > array[i] && array[i] != '') min = array[i];
+        console.log(min);
     }
     console.log(array);
 
