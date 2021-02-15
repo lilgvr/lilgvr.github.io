@@ -113,12 +113,20 @@
 
 /* Настольные компьютеры и ноутбуки ----------- */
 @media only screen  and (min-width: 1224px) {
-   
+   #wrapper{
+       width: 100%;
+   }
+
+   #activities__container{
+       width: 90%;
+   }
 }
 
 /* Большие экраны ----------- */
 @media only screen  and (min-width: 1824px) {
-    
+    #activities__container{
+        width: 90%;
+    }
 }
 
 /* iPhone 4 ----------- */
