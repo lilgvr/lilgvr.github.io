@@ -10,7 +10,7 @@ var scrollPos = 0;
 var array = [];
 
 window.onload = () => {
-    currentUser = localStorage.getItem('currentUser');
+    currentUser = sessionStorage.getItem('currentUser');
     if (currentUser == null) {
         overlay.style.display = 'flex';
         header.style.display = 'none';
@@ -37,7 +37,7 @@ document.getElementById('cake').addEventListener('click', () => {
 startpageSubmit.addEventListener('click',
     () => {
         var value = document.getElementById('startpage--input').value;
-        localStorage.setItem('currentUser', value);
+        sessionStorage.setItem('currentUser', value);
         currentUser = value;
         overlay.style.display = 'none';
         header.style.display = 'flex';
@@ -89,10 +89,6 @@ sqbtn.addEventListener('click', () => {
 scrsvrbtn.addEventListener('click', showScreensaver);
 
 function showScreensaver() {
-    screensaver.classList.add('screensaver-active');
-    screensaver.classList.remove('screensaver-nactive');
-    document.getElementById('screensaver-content').classList.add('screensaver-active');
-    document.getElementById('screensaver-content').classList.remove('screensaver-nactive');
     screensaver.style.display = 'flex';
     document.body.style.overflowY = 'hidden';
     if (date.getHours() < 10) document.getElementById('hours').innerHTML = '0' + date.getHours();
@@ -108,8 +104,6 @@ function showScreensaver() {
 }
 
 function hideScreensaver() {
-    screensaver.classList.remove('screensaver-active');
-    document.getElementById('screensaver-content').classList.remove('screensaver-active');
     screensaver.style.display = 'none';
     document.body.style.overflowY = 'visible';
 }
