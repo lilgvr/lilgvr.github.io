@@ -27,7 +27,7 @@ window.onload = () => {
 }
 
 document.getElementById('cake').addEventListener('click', () => {
-    document.getElementById('menu-button').classList.add('cake-transition');
+    document.getElementById('menu-button').style.margin = '0 0 0 10%';
     document.getElementById('main-info-content').style.justifyContent = 'space-between';
     document.getElementById('cake-img').classList.add('cake-transition');
     document.getElementById('cake-img').style.display = 'block';
