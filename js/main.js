@@ -86,7 +86,11 @@ sqbtn.addEventListener('click', () => {
 })
 
 
-scrsvrbtn.addEventListener('click', showScreensaver);
+scrsvrbtn.addEventListener('click', ()=>{
+    screensaver.onload = ()=>{
+        showScreensaver();
+    }
+});
 
 function showScreensaver() {
     screensaver.style.display = 'flex';
