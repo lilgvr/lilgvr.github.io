@@ -12,35 +12,31 @@ var array = [];
 window.onload = () => {
     currentUser = sessionStorage.getItem('currentUser');
     if (currentUser == null) {
+        
         overlay.style.display = 'flex';
         header.style.display = 'none';
         document.body.style.overflowY = 'hidden';
         document.getElementById('wrapper').style.display = 'none';
     }
     else {
+
         overlay.style.display = 'none';
         header.style.display = 'flex';
         document.body.style.overflowY = 'visible';
         document.getElementById('wrapper').style.display = 'block';
         showUsername();
     };
+
 }
-
-document.getElementById('cake').addEventListener('click', () => {
-    document.getElementById('menu-button').style.margin = '0 0 0 10%';
-    document.getElementById('main-info-content').style.justifyContent = 'space-between';
-    document.getElementById('cake-img').classList.add('cake-transition');
-    document.getElementById('cake-img').style.display = 'block';
-
-})
 
 startpageSubmit.addEventListener('click',
     () => {
         var value = document.getElementById('startpage--input').value;
-        if(value.length == 0) return;
+        if (value.length == 0) return;
         sessionStorage.setItem('currentUser', value);
         currentUser = value;
         overlay.style.display = 'none';
+
         header.style.display = 'flex';
         document.body.style.overflowY = 'visible';
         document.getElementById('wrapper').style.display = 'block';
@@ -82,16 +78,12 @@ sqbtn.addEventListener('click', () => {
     if (a.length != 0 && h.length != 0 && Number(a) > 0 && Number(h) > 0) {
         res.innerHTML = triangleSquare(Number(a), Number(h));
     } else {
-        res.innerHTML = 'Необходимо ввести корректные данные';
+        res.innerHTML = '0';
     }
 })
 
 
-scrsvrbtn.addEventListener('click', ()=>{
-    screensaver.onload = ()=>{
-        showScreensaver();
-    }
-});
+scrsvrbtn.addEventListener('click', showScreensaver);
 
 function showScreensaver() {
     screensaver.style.display = 'flex';
@@ -119,9 +111,9 @@ document.getElementById('strings--count__btn').addEventListener('click', () => {
         str2 = document.getElementById('str2').value;
     var span = document.getElementById('stringsres');
 
-    if(str1.length == 0) return;
+    if (str1.length == 0) return;
 
-    if (str1.length == str2.length ) {
+    if (str1.length == str2.length) {
         span.innerHTML = 'Длины строк равны';
     } else {
         span.innerHTML = 'Длины строк не равны';
@@ -292,9 +284,5 @@ document.getElementById('timer--start-stop__btn').addEventListener('click', () =
     else startTimer();
 });
 
-function negColor(color) {
-    // '#ffffff'
-    let res = '';
-
-
-}
+// document.getElementsByClassName('test-question--wrapper')[0].
+// getElementsByTagName('div')[0].getElementsByTagName('input')[0].checked
