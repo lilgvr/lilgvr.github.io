@@ -1,69 +1,69 @@
-#header{
-    position: fixed;
-    top: 0;
-    left:0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 5vw;
+#header {
+    position           : fixed;
+    top                : 0;
+    left               : 0;
+    display            : flex;
+    flex-direction     : row;
+    justify-content    : space-between;
+    align-items        : center;
+    width              : 100%;
+    height             : 5vw;
     /* background-image: linear-gradient(to left, #434343 0%, black 100%); */
-    background-color: #121212;
-    color: white;
-    font-size: 2vw;
-    /* padding: 0 2px; */
-    z-index: 10;
+    background-color   : #121212;
+    color              : white;
+    font-size          : 2vw;
+    /* padding         : 0 2px; */
+    z-index            : 10;
 }
 
 
-.header__button{
-    display: flex;
-    align-items: center;
+.header__button {
+    display        : flex;
+    align-items    : center;
     justify-content: center;
-    transition: filter .2s linear;
-    height: 100%;
-    width: fit-content;
-    padding: 0 2vw;
+    transition     : filter .2s linear;
+    height         : 100%;
+    width          : fit-content;
+    padding        : 0 2vw;
 }
 
-.header__button:hover{
+.header__button:hover {
     cursor: pointer;
 }
 
-#header--left{
-    height: 100%;
-    width:50%;
+#header--left {
+    height         : 100%;
+    width          : 50%;
     justify-content: flex-start;
-    align-items: center;
-    display: flex;
+    align-items    : center;
+    display        : flex;
 }
 
-#header--right{
-    height: 100%;
-    width: 50%;
-    display: flex;
+#header--right {
+    height         : 100%;
+    width          : 50%;
+    display        : flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items    : center;
 }
 
-.element--first{
+.element--first {
     border-left: none;
 }
 
-.element--last{
+.element--last {
     border-right: none;
 }
 
-#greetings{
-    display: flex;
+#greetings {
+    display        : flex;
     justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 0 1vw;
-    font-size: 1.5vw;
+    align-items    : center;
+    height         : 100%;
+    padding        : 0 1vw;
+    font-size      : 1.5vw;
 }
 
-#top-button{
+#top-button {
     display: none;
 }

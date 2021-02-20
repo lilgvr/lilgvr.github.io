@@ -1,480 +1,476 @@
 @import './header.css';
 
-@font-face{
+@font-face {
     font-family: "Sansation";
-    src: local('Sansation_Regular'), url('./fonts/Sansation_Regular.ttf') format('truetype');
+    src        : local('Sansation_Regular'), url('./fonts/Sansation_Regular.ttf') format('truetype');
     font-weight: 300;
-    font-style: normal;
+    font-style : normal;
 }
 
-@font-face{
+@font-face {
     font-family: "Sansation Light";
-    src: local('Sansation_Light'), url('./fonts/Sansation_Light.ttf') format('truetype');
+    src        : local('Sansation_Light'), url('./fonts/Sansation_Light.ttf') format('truetype');
     font-weight: 200;
-    font-style: normal;
+    font-style : normal;
 }
 
-@font-face{
+@font-face {
     font-family: "Sansation Bold";
-    src: local('Sansation_Bold'), url('./fonts/Sansation_Bold.ttf') format('truetype');
+    src        : local('Sansation_Bold'), url('./fonts/Sansation_Bold.ttf') format('truetype');
     font-weight: 500;
-    font-style: normal;
+    font-style : normal;
 }
 
-:root{
+:root {
     --transition-time: .1s;
 }
 
-html{
+html {
     font-family: "Sansation";
 }
 
-a{
+a {
     text-decoration: none;
+    color          : inherit;
+}
+
+a:visited {
     color: inherit;
 }
 
-a:visited{
-    color: inherit;
-}
-
-body{
-    margin: 0;
+body {
+    margin          : 0;
     background-color: white;
-    overflow-x: hidden;
+    overflow-x      : hidden;
 }
 
-#wrapper{
-    width: 100%;
-    height: 100%;
+#wrapper {
+    width   : 100%;
+    height  : 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top     : 0;
+    left    : 0;
 }
 
-#startpage--overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1;
+#startpage--overlay {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    opacity         : 1;
     background-color: black;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    transition: opacity .5s linear;
+    width           : 100%;
+    height          : 100%;
+    z-index         : 1;
+    display         : none;
+    justify-content : center;
+    align-items     : center;
+    transition      : opacity .5s linear;
 }
 
-#cake{
-    font-weight: bold;
-    padding: 2px;
-    height: min-content;
-    transition: display 1s linear;
-}
 
-#cake:hover{
-    cursor:pointer;
-}
 
-.cake-transition{
-    transition: all .5s;
-}
-
-#startpage--block{
-    width: 40%;
-    height: 40%;
+#startpage--block {
+    width           : 40%;
+    height          : 40%;
     background-color: black;
-    border: 2px solid lightgray;
-    padding: 2vw;
-    display:flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
+    border          : 2px solid lightgray;
+    padding         : 2vw;
+    display         : flex;
+    justify-content : flex-start;
+    align-items     : center;
+    flex-direction  : column;
 }
 
-#startpage--block :nth-child(odd){
+#startpage--block :nth-child(odd) {
     margin-top: 1vw;
 }
 
-#startpage--input{
-    margin-top: 10%;
+#startpage--input {
+    margin-top   : 10%;
     border-radius: 0;
-    
+
     font-family: "Sansation";
-    padding: 10px 15px;
-    border: 2px solid black;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 2px white;
-    outline: 2px solid white;
-    transition: background-color var(--transition-time) linear, color var(--transition-time) linear,
-    border var(--transition-time) linear;
+    padding    : 10px 15px;
+    border     : 2px solid black;
+    box-shadow : 0 0 0 2px #fff, 0 0 0 2px white;
+    outline    : 2px solid white;
+    transition : background-color var(--transition-time) linear, color var(--transition-time) linear,
+        border var(--transition-time) linear;
 }
 
-#startpage--input:focus::-webkit-input-placeholder{
+#startpage--input:focus::-webkit-input-placeholder {
     color: transparent;
 }
 
-#startpage--submit{
-    margin: 2vw 0 0 0;
-    font-size: 1.5vw;
-    padding: 5px;
-    color: white;
-    border: 2px solid white;
+#startpage--submit {
+    margin    : 2vw 0 0 0;
+    font-size : 1.5vw;
+    padding   : 5px;
+    color     : white;
+    border    : 2px solid white;
     box-shadow: 0 0 0 2px #fff, 0 0 0 2px white;
-    outline: 2px solid black;
+    outline   : 2px solid black;
     transition: background-color var(--transition-time) linear, color var(--transition-time) linear;
 }
 
-#startpage--input:focus{
-    border-radius: 0;
-    border: 2px solid black;
+#startpage--input:focus {
+    border-radius   : 0;
+    border          : 2px solid black;
     background-color: black;
-    outline: none;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 2px white;
-    color: white;
+    outline         : none;
+    box-shadow      : 0 0 0 2px #fff, 0 0 0 2px white;
+    color           : white;
 }
 
-#startpage--submit:hover{
-    cursor: pointer;
-    color: black;
+#startpage--submit:hover {
+    cursor          : pointer;
+    color           : black;
     background-color: white;
 }
 
-#startpage--block span{
+#startpage--block span {
     font-size: 2vw;
-    color: white;
+    color    : white;
 }
 
-#main-info{
-    z-index: 0;
-    position: absolute;
-    top: 5vw;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
+#main-info {
+    z-index        : 0;
+    position       : absolute;
+    top            : 5vw;
+    left           : 0;
+    width          : 100%;
+    height         : 100%;
+    display        : flex;
     justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
+    align-items    : center;
+    flex-direction : column;
 
 }
 
-#main-info h1{
-    font-size: 4vw;
+#main-info h1 {
+    font-size  : 4vw;
     font-family: "Sansation Bold";
 }
 
-#main-info--text{
-    display: flex;
+#main-info--text {
+    display        : flex;
     justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    height: 60%;
-    width: 70%;
+    align-items    : flex-start;
+    flex-direction : column;
+    height         : 60%;
+    width          : 70%;
 }
 
-#cake-img{
-    -webkit-filter: drop-shadow(2px 2px 2px #222);
-    filter: drop-shadow(2px 2px 2px #222);
-    filter: grayscale(100%);
-    pointer-events: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    display: none;
-    transition: visibility .25s linear;
-}
 
-#menu-button{
-    border: 2px solid black;
+
+#menu-button {
+    border          : 2px solid black;
     background-color: white;
-    height: 40%;
-    width: 40%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3vw;
-    cursor: pointer;
-    font-family: "Sansation Light";
-    transition: background-color var(--transition-time) linear, color var(--transition-time) linear;
+    height          : 40%;
+    width           : 40%;
+    margin          : 0;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    font-size       : 3vw;
+    cursor          : pointer;
+    font-family     : "Sansation Light";
+    transition      : background-color var(--transition-time) linear, color var(--transition-time) linear;
 }
 
-#menu-button:hover{
+#menu-button:hover {
     background-color: black;
-    color: white;
+    color           : white;
 }
 
-#main-info-content{
-    display: flex;
+#main-info-content {
+    display        : flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    width: 70%;
-    height: 30%;
-    min-height: 30%;
+    align-items    : center;
+    flex-direction : row;
+    width          : 70%;
+    height         : 30%;
+    min-height     : 30%;
 }
 
-#main-info--text span{
-    font-size: 1.75vw;
+#main-info--text span {
+    font-size  : 1.75vw;
     font-family: "Sansation Light";
 }
 
-#secondary-info{
-    z-index: 0;
-    position: absolute;
-    top: 120%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
+#secondary-info {
+    z-index        : 0;
+    position       : absolute;
+    top            : 120%;
+    left           : 0;
+    width          : 100%;
+    height         : 100%;
+    display        : flex;
     justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
+    align-items    : center;
+    flex-direction : column;
 }
 
-#secondary-info--text{
-    width: 70%;
-    height: 100%;
-    display: flex;
+#secondary-info--text {
+    width          : 70%;
+    height         : 100%;
+    display        : flex;
     justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+    align-items    : flex-start;
+    flex-direction : column;
 }
 
-#secondary-info--text ul{
+#secondary-info--text ul {
     font-family: "Sansation Light";
-    font-size: 1.5vw;
+    font-size  : 1.5vw;
 }
 
-#secondary-info--text li{
+#secondary-info--text li {
     margin-top: 15px;
 }
 
-#secondary-info--text span{
+#secondary-info--text span {
     font-family: "Sansation Light";
-    font-size: 1.5vw;
-    margin-top: 5px;
+    font-size  : 1.5vw;
+    margin-top : 5px;
 }
 
 
-#secondary-info h2{
+#secondary-info h2 {
     font-family: "Sansation Bold";
-    font-size: 1.5vw;
+    font-size  : 1.5vw;
 }
 
-#activities{
-    z-index: 0;
+#activities {
+    z-index         : 0;
     background-color: black;
-    position: absolute;
-    top: 220%;
-    left: 0;
-    width: 100%;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
+    position        : absolute;
+    top             : 220%;
+    left            : 0;
+    width           : 100%;
+    height          : 70%;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    flex-direction  : column;
+
 }
 
-#activities--title{
+#activities--title {
     color: white;
 }
 
-#activities__container{
-    display: flex;
+#activities__container {
+    display        : flex;
     justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: row;
-    width: 100%;
-    height: 60%;
+    align-items    : flex-start;
+    flex-direction : row;
+    width          : 100%;
+    height         : 60%;
+    max-width      : 90%;
 }
 
-#activities--title{
-    display: flex;
+#activities--title {
+    display        : flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 40%;
+    align-items    : center;
+    width          : 100%;
+    height         : 40%;
 }
 
-#activities--title span{
+#activities--title span {
     font-family: "Sansation Bold";
-    font-size: 3vw;
+    font-size  : 3vw;
 }
 
-#triangle-page__container{
-    display: flex;
+#triangle-page__container {
+    display        : flex;
     justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    top: 290%;
-    left: 0;
-    width: 100%;
-    height: 80%;
+    align-items    : center;
+    flex-direction : column;
+    position       : absolute;
+    top            : 290%;
+    left           : 0;
+    width          : 100%;
+    height         : 80%;
 }
 
-#triangle-page__container h3{
-    font-size: 2.5vw;
+#triangle-page__container h3 {
+    font-size  : 2.5vw;
     font-family: "Sansation Bold";
 }
 
-#triangle-page__inputs, #strings-page__content, #array-page__content{
-    margin-top: 5%;
-    display: flex;
+#triangle-page__inputs,
+#strings-page__content,
+#array-page__content {
+    margin-top     : 5%;
+    display        : flex;
     justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 90%;
-    height: 50%;
+    align-items    : flex-start;
+    flex-direction : column;
+    width          : 90%;
+    height         : 50%;
 }
 
-#triangle-page__inputs span{
+#triangle-page__inputs span {
     font-size: 1.5vw;
 }
 
-#triangle-page__inputs div{
+#triangle-page__inputs div {
     margin-top: 20px;
 }
 
-#triangle_a, #triangle_h, #str1, #str2{
-    width: 15%;
-    margin-left: 10px;
+#triangle_a,
+#triangle_h,
+#str1,
+#str2 {
+    width        : 15%;
+    margin-left  : 10px;
     border-radius: 0;
+    /* transition: */
 }
 
-#triangle_a, #triangle_h{
+#triangle_a,
+#triangle_h {
     border: 2px solid black;
 }
 
-#triangle_a:focus, #triangle_h:focus{
+#triangle_a:focus,
+#triangle_h:focus {
     border-radius: 0;
+    outline      : none;
 }
 
 #triangle--count-square__btn,
-#array--button, #strings--count__btn, #timer--start-stop__btn,
+#array--button,
+#strings--count__btn,
+#timer--start-stop__btn,
 #timer--clear__btn {
-    margin-top: 15px;
-    display: flex;
+    margin-top     : 15px;
+    display        : flex;
     justify-content: center;
-    align-items: center;
-    width: 90px;
-    height: 25px;
-    padding: 10px;
-    cursor: pointer;
-    transition: color var(--transition-time) linear, background-color var(--transition-time) linear;
-    border: 2px solid black;
-    
+    align-items    : center;
+    width          : 90px;
+    height         : 25px;
+    padding        : 10px;
+    cursor         : pointer;
+    transition     : color var(--transition-time) linear, background-color var(--transition-time) linear;
+    border         : 2px solid black;
+
 }
 
 #triangle--count-square__btn:hover,
 #array--button:hover {
     background-color: black;
-    color: white;
+    color           : white;
 }
 
-#strings--count__btn, #timer--start-stop__btn,
-#timer--clear__btn{
+#strings--count__btn,
+#timer--start-stop__btn,
+#timer--clear__btn {
     background-color: white;
-    color: black;
-    transition: color var(--transition-time) linear, background-color var(--transition-time) linear;
-    border: 2px solid black;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 2px black;
-    outline: 2px solid white;
+    color           : black;
+    transition      : color var(--transition-time) linear, background-color var(--transition-time) linear;
+    border          : 2px solid black;
+    box-shadow      : 0 0 0 2px #fff, 0 0 0 2px black;
+    outline         : 2px solid white;
 }
 
-#strings--count__btn:hover, #timer--start-stop__btn:hover, #timer--clear__btn:hover{
+#strings--count__btn:hover,
+#timer--start-stop__btn:hover,
+#timer--clear__btn:hover {
     background-color: black;
-    color: white;
-    border: 2px solid black;
-    box-shadow: none;
-    outline: 2px solid white;
+    color           : white;
+    border          : 2px solid black;
+    box-shadow      : none;
+    outline         : 2px solid white;
 }
 
 
-#timer--start-stop__btn{
+#timer--start-stop__btn {
     min-width: 90px;
 }
 
-#tr-res, #stringsres{
+#tr-res,
+#stringsres {
     font-family: "Sansation Bold";
 }
 
 
-#strings-page__container{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    top: 370%;
-    left: 0;
-    width: 100%;
-    height: 80%;
+#strings-page__container {
+    display         : flex;
+    justify-content : flex-start;
+    align-items     : center;
+    flex-direction  : column;
+    position        : absolute;
+    top             : 390%;
+    left            : 0;
+    width           : 100%;
+    height          : 80%;
     background-color: black;
-    color: white;
+    color           : white;
 }
 
-#strings-page__container h3{
-    font-size: 2.5vw;
+#strings-page__container h3 {
+    font-size  : 2.5vw;
     font-family: "Sansation Bold";
 }
 
-#str1, #str2{
-    width: 40%;
-    border: 2px solid black;
+#str1,
+#str2 {
+    width     : 40%;
+    border    : 2px solid black;
     box-shadow: 0 0 0 2px #fff, 0 0 0 2px black;
-    outline: 2px solid white;
+    outline   : 2px solid white;
+    transition: border var(--transition-time) linear;
 }
 
 
-#str1:focus, #str2:focus{
-    border: 2px solid white;
+#str1:focus,
+#str2:focus {
+    border       : 2px solid white;
     border-radius: 0;
 }
 
-#strings-page__content span{
+#strings-page__content span {
     font-size: 1.5vw;
 }
 
-#array-page__container{
-    display: flex;
+#array-page__container {
+    display        : flex;
     justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    top: 450%;
-    left: 0;
-    width: 100%;
-    height: 80%;
+    align-items    : center;
+    flex-direction : column;
+    position       : absolute;
+    top            : 470%;
+    left           : 0;
+    width          : 100%;
+    height         : 80%;
 }
 
-#array-page__container h3{
-    font-size: 2.5vw;
+#array-page__container h3 {
+    font-size  : 2.5vw;
     font-family: "Sansation Bold";
 }
 
 
-#array-page__content span{
+#array-page__content span {
     font-size: 1.5vw;
 }
 
-.array-element{
-    width: fit-content;
-    max-width: 2vw;
-    margin-left: 10px;
-    min-height: 1.5vw;
+.array-element {
+    width        : fit-content;
+    max-width    : 2vw;
+    margin-left  : 10px;
+    min-height   : 1.5vw;
     border-radius: 0;
-    border: 2px solid black;
-    
+    border       : 2px solid black;
+
 }
 
-.array-element:focus{
+.array-element:focus {
     border-radius: 0;
+    outline      : none;
 }
 
 input::-webkit-outer-spin-button,
@@ -482,244 +478,312 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-#array--plus, #array--minus{
+#array--plus,
+#array--minus {
     background-color: white;
-    font-family: "Sansation Bold";
-    font-size: 2vw;
-    border: 2px solid black;
-    padding: 3px 10px;
-    margin: 20px 0;
-    height: fit-content;
-    transition: background-color .25s linear, color .25s linear;
+    font-family     : "Sansation Bold";
+    font-size       : 2.5vw;
+    border          : 2px solid black;
+    padding         : 0 10px;
+    margin          : 20px 0;
+    height          : fit-content;
+    transition      : background-color .25s linear, color .25s linear;
+    height          : min-content;
+    width           : min-content;
 }
 
-#array--plus:hover{
+#array--plus:hover {
     background-color: black;
-    color: white;
-    cursor: pointer;
+    color           : white;
+    cursor          : pointer;
 }
 
-#array--minus:hover{
+#array--minus:hover {
     background-color: black;
-    color: white;
-    cursor: pointer;
+    color           : white;
+    cursor          : pointer;
 }
 
-#array-ctr{
-    display: flex;
+#array-ctr {
+    display        : flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
+    align-items    : flex-start;
+    flex-direction : column;
 }
 
-#array--elements{
-    width: 100%;
-    margin-top: 30px;
-    display: flex;
+#array--elements {
+    width          : 100%;
+    margin-top     : 30px;
+    display        : flex;
     justify-content: flex-start;
-    align-items: stretch;
-    flex-direction: row;
+    align-items    : stretch;
+    flex-direction : row;
 }
 
-#array-buttons{
-    display: flex;
+#array-buttons {
+    display        : flex;
     justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    width: 7%;
+    align-items    : center;
+    flex-direction : row;
+    width          : 7%;
 }
 
-#array--min, #array--max{
+#array--min,
+#array--max {
     font-family: "Sansation Bold";
 }
 
-#timer-page__container{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    top: 530%;
-    left: 0;
-    width: 100%;
-    height: 70%;
+#timer-page__container {
+    display         : flex;
+    justify-content : flex-start;
+    align-items     : center;
+    flex-direction  : column;
+    position        : absolute;
+    top             : 570%;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
     background-color: black;
-    color: white;
+    color           : white;
 }
 
-#timer-page-content{
-    display: flex;
-    margin: 5%;
+#timer-page-content {
+    display        : flex;
+    margin         : 5%;
     justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    align-self: flex-start;
+    align-items    : flex-start;
+    flex-direction : column;
+    align-self     : flex-start;
 }
 
-#timer-page__container h3{
-    font-size: 2.5vw;
+#timer-page-content span:last-of-type {
+    margin: 0 0 1% 0;
+}
+
+#timer-page__container h3 {
+    font-size  : 2.5vw;
     font-family: "Sansation Bold";
 }
 
-#timer--ctr{
-    display: flex;
+#timer--ctr {
+    display       : flex;
     flex-direction: column;
-    align-self: flex-start;
+    align-self    : flex-start;
 }
 
-#timer{
+#timer {
     font-size: 4vw;
 }
 
-#timer-buttons{
-    display: flex;
+#timer-buttons {
+    display        : flex;
     justify-content: center;
-    align-items: flex-start;
-    margin: 5% 0;
+    align-items    : flex-start;
+    margin         : 5% 0;
 }
 
-#timer-buttons div{
+#timer-buttons div {
     margin: 0 5%;
 }
 
-.activity--block{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 180px;
-    height: 180px;
-    background-color: white;
-    border: 2px solid black;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 4px black;
-    outline: 2px solid white;
-    cursor: pointer;
-    z-index: 1;
-    transition: background-color var(--transition-time) linear, color var(--transition-time) linear, filter var(--transition-time) linear;
-}
-
-.activity--block:hover{
-    background-color: black;
-    color: white;
+.activity--block {
     
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    width           : 12vw;
+    height          : 12vw;
+    background-color: white;
+    border          : 2px solid black;
+    box-shadow      : 0 0 0 2px #fff, 0 0 0 4px black;
+    outline         : 2px solid white;
+    cursor          : pointer;
+    z-index         : 1;
+    transition      : background-color var(--transition-time) linear, color var(--transition-time) linear, filter var(--transition-time) linear;
 }
 
-.activity--block:hover img{
+.activity--block:hover {
+    background-color: black;
+    color           : white;
+
+}
+
+.activity--block:hover img {
     filter: invert();
 }
 
-.activity--block a{
-    width: 100%;
+.activity--block a {
+    width : 100%;
     height: 100%;
 }
 
-.activity--inner{
-    width: 100%;
-    height: 100%;
-    display: flex;
+.activity--inner {
+    width          : 100%;
+    height         : 100%;
+    display        : flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    z-index: 2;
-    font-size: 1vw;
+    align-items    : center;
+    flex-direction : column;
+    text-align     : center;
+    z-index        : 2;
+    font-size      : 1vw;
 }
 
-.activity--inner span{
+.activity--inner span {
     margin-top: 10px;
 }
 
-.activity--triangle{
+.activity--triangle {
     margin: 0 0 0 5%;
 }
 
-.activity--strings{
+.activity--strings {
     margin: 0;
 }
 
-.activity--array{
+.activity--array {
     margin: 0;
 }
 
-.activity--timer{
+.activity--timer {
     margin: 0;
 }
 
-.activity--test{
+.activity--test {
     margin: 0 5% 0 0;
 }
 
 
-#screensaver-wrapper{
-    z-index: 15;
-    position:fixed;
-    top: 0;
-    left: 0;
-    background: url('../images/screensaver.jpg') no-repeat;
+#screensaver-wrapper {
+    z-index        : 15;
+    position       : fixed;
+    top            : 0;
+    left           : 0;
+    background     : url('../images/screensaver.jpg') no-repeat;
     background-size: 100%;
-    width: 100%;
-    height: 100%;
+    width          : 100%;
+    height         : 100%;
     justify-content: flex-end;
-    align-items: flex-start;
-    display: none;
+    align-items    : flex-start;
+    display        : none;
 }
 
 
-#screensaver-content{
-    width: 50%;
-    height: 90%;
-    display: flex;
+#screensaver-content {
+    width          : 50%;
+    height         : 90%;
+    display        : flex;
     justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    color: white;
-    z-index: 16;
+    align-items    : center;
+    flex-direction : column;
+    color          : white;
+    z-index        : 16;
 }
 
 
 
-#time{
-    margin: 10%;
-    display: flex;
+#time {
+    margin         : 10%;
+    display        : flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
+    align-items    : flex-start;
+    flex-direction : column;
 }
 
-#time span{
+#time span {
     font-family: "Sansation Light";
-    font-size: 5vw;
-    filter: drop-shadow(1px 1px 1px #222);
+    font-size  : 5vw;
+    filter     : drop-shadow(1px 1px 1px #222);
 }
 
-#date-name span{
-    font-size: 3vw;
+#date-name span {
+    font-size  : 3vw;
     font-family: "Sansation Light";
-    filter: drop-shadow(2px 2px 2px #222);
+    filter     : drop-shadow(2px 2px 2px #222);
 }
 
 
-#test-page__container{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    top: 600%;
-    left: 0;
-    width: 100%;
-    height: 100%;
+#test-page__container {
+    display         : flex;
+    justify-content : flex-start;
+    align-items     : center;
+    flex-direction  : column;
+    position        : absolute;
+    top             : 670%;
+    left            : 0;
+    width           : 100%;
+    height          : 120%;
     background-color: white;
+    font-size       : 1.5vw;
 }
 
-#test-page__container h3{
-    font-size: 2.5vw;
+#test-page__container h3 {
+    font-size  : 2.5vw;
     font-family: "Sansation Bold";
 }
 
-#test-page-content{
-    display: flex;
+#test-page-content {
+    display        : flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items    : flex-start;
+    margin         : 5% 0 0 10%;
+    align-self     : flex-start;
+    flex-direction : column;
 }
 
 
+
+#test-page-text {
+    display        : flex;
+    justify-content: flex-start;
+    align-items    : flex-start;
+    flex-direction : column;
+    align-self     : flex-start;
+    margin         : 5% 0 0 10%;
+}
+
+.test-question {
+    font-weight  : bold;
+    margin-bottom: 5%;
+}
+
+.test-answer {}
+
+.test-radio {
+    border-color: black;
+}
+
+.test-question--wrapper {
+    display        : flex;
+    justify-content: flex-start;
+    align-items    : flex-start;
+    flex-direction : column;
+    margin-bottom  : 5vw;
+}
+
+.test-question--wrapper div {
+    margin: 5% 0;
+}
+
+.test-question--wrapper input[type="radio"]:checked {
+    background-color: black;
+}
+
+#test-submit-button {
+    background-color: white;
+    border          : 2px solid black;
+    width           : fit-content;
+    height          : fit-content;
+    padding         : 10%;
+    font-size       : 1.5vw;
+    transition      : background-color var(--transition-time) linear, color var(--transition-time) linear;
+    font-family     : "Sansation";
+    border-radius: 0;
+
+}
+
+#test-submit-button:hover {
+    background-color: black;
+    color           : white;
+    cursor: pointer;
+}
