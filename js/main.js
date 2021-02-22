@@ -11,8 +11,9 @@ var array = [];
 
 window.onload = () => {
     currentUser = sessionStorage.getItem('currentUser');
+
     if (currentUser == null) {
-        
+
         overlay.style.display = 'flex';
         header.style.display = 'none';
         document.body.style.overflowY = 'hidden';
@@ -25,6 +26,9 @@ window.onload = () => {
         document.body.style.overflowY = 'visible';
         document.getElementById('wrapper').style.display = 'block';
         showUsername();
+        setTimeout(() => {
+            fillTest();
+        }, 2000);
     };
 
 }
@@ -284,5 +288,137 @@ document.getElementById('timer--start-stop__btn').addEventListener('click', () =
     else startTimer();
 });
 
-// document.getElementsByClassName('test-question--wrapper')[0].
-// getElementsByTagName('div')[0].getElementsByTagName('input')[0].checked
+// ================================= Тест =======================================
+
+var currentQuestion = 1;
+
+// if (sessionStorage.getItem('curQuestion') == null) {
+//     currentQuestion = 1;
+// } else {
+//     currentQuestion = Number(sessionStorage.getItem('curQuestion'));
+// }
+var radios = document.getElementsByClassName('test-radio');
+var userAnswers = [];
+var rightAnswers = ["2",
+    "3",
+    "3",
+    "1",
+    "1",
+    "4",
+    "1",
+    "1",
+    "3",
+    "4"
+]
+var wrongAnswers = {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": false,
+    "5": false,
+    "6": false,
+    "7": false,
+    "8": false,
+    "9": false,
+    "10": false,
+};
+var lastChecked;
+var countofwrong;
+
+var answers;
+var questions;
+
+
+getJSONArray('js/answers.json').then(json => answers = json.data);
+getJSONArray('js/questions.json').then(json => questions = json.data);
+
+
+
+function fillTest() {
+    if (currentQuestion == 10) {
+        document.getElementById('test-submit-button').style.visibility = 'visible';
+        document.getElementById('next-question-button').style.display = 'none';
+    }
+    document.getElementsByClassName('test-question')[0].innerHTML = currentQuestion + '. ' + questions[currentQuestion - 1];
+    let labels = document.getElementsByClassName('test-label');
+    let values = answers[`q${currentQuestion}`];
+    for (let i = 0; i < labels.length; i++) {
+        labels[i].innerHTML = values[i];
+    }
+}
+
+
+function undisable(radio) {
+    document.getElementById('next-question-button').removeAttribute('disabled');
+    lastChecked = radio.id;
+}
+
+document.getElementById('next-question-button').addEventListener('click', () => {
+    currentQuestion++;
+    userAnswers.push(lastChecked);
+    sessionStorage.setItem('userAnswers', userAnswers);
+    document.getElementById('next-question-button').setAttribute('disabled', '');
+    fillTest();
+    uncheck();
+})
+
+document.getElementById('test-submit-button').addEventListener('click', () => {
+    document.getElementById('test-page-text').style.display = 'none';
+    document.getElementById('test-btns').style.display = 'none';
+    document.getElementsByClassName('test-question--wrapper')[0].style.display = 'none';
+    document.getElementById('test-results--wrapper').style.display = 'flex';
+    compareAnswers();
+    fillAnswers();
+})
+
+function fillAnswers() {
+    document.getElementById('count-answers').innerHTML = 'Правильных ответов: ' + (rightAnswers.length - countofwrong);
+    var q;
+    var uaspan;
+    var rightspan;
+    
+
+    for (let i = 0; i < rightAnswers.length; i++) {
+        var newdiv;
+        newdiv = document.createElement('div');
+        newdiv.className = 'test-result';
+        q = document.createElement('span');
+        q.innerHTML = (i + 1) + '. ' + questions[i];
+        q.className = 'test-question';
+        uaspan = document.createElement('span');
+        uaspan.innerHTML = 'Ваш ответ: ' + userAnswers[i];
+        rightspan = document.createElement('span');
+        if (rightAnswers[i] == userAnswers[i]) {
+            rightspan.innerHTML = 'Ваш ответ - правильный';
+        } else{
+            rightspan.innerHTML = `Правильный ответ - ${answers['q' + i + 1][rightAnswers[i]]}`;
+        }
+        newdiv.appendChild(q);
+        newdiv.appendChild(uaspan);
+        newdiv.appendChild(rightspan);
+        document.getElementsByClassName('test-results--wrapper')[0].appendChild(newdiv);
+    }
+}
+
+function compareAnswers() {
+    let wrong = 0;
+    for (let i = 0; i < rightAnswers.length; i++) {
+        if (rightAnswers[i] != userAnswers[i]) {
+            wrongAnswers[i + 1] = true;
+            wrong++;
+        }
+    }
+
+    countofwrong = wrong;
+}
+
+function uncheck() {
+    for (let i = 0; i < radios.length; i++) radios[i].checked = false;
+}
+
+function getJSONArray(src) {
+    return fetch(
+        src,
+        { method: 'GET', headers: { 'Content-Type': 'application/json' } }
+    ).then(response => response.json());
+}
