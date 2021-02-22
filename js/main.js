@@ -363,6 +363,9 @@ document.getElementById('next-question-button').addEventListener('click', () => 
 })
 
 document.getElementById('test-submit-button').addEventListener('click', () => {
+    currentQuestion++;
+    userAnswers.push(lastChecked);
+    sessionStorage.setItem('userAnswers', userAnswers);
     document.getElementById('test-page-text').style.display = 'none';
     document.getElementById('test-btns').style.display = 'none';
     document.getElementsByClassName('test-question--wrapper')[0].style.display = 'none';
@@ -376,7 +379,7 @@ function fillAnswers() {
     var q;
     var uaspan;
     var rightspan;
-    
+
 
     for (let i = 0; i < rightAnswers.length; i++) {
         var newdiv;
@@ -390,7 +393,7 @@ function fillAnswers() {
         rightspan = document.createElement('span');
         if (rightAnswers[i] == userAnswers[i]) {
             rightspan.innerHTML = 'Ваш ответ - правильный';
-        } else{
+        } else {
             rightspan.innerHTML = `Правильный ответ - ${answers['q' + i + 1][rightAnswers[i]]}`;
         }
         newdiv.appendChild(q);
@@ -401,7 +404,7 @@ function fillAnswers() {
 }
 
 function compareAnswers() {
-    let wrong = 0;
+    var wrong = 0;
     for (let i = 0; i < rightAnswers.length; i++) {
         if (rightAnswers[i] != userAnswers[i]) {
             wrongAnswers[i + 1] = true;
